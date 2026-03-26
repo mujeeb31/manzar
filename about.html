@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>About - Manzar Jewellery</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body{background:#f9fafb;color:#1d2b3a;}
+
+/* HERO */
+.about-hero{
+height:60vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;
+background:linear-gradient(rgba(255,255,255,0.85),rgba(255,255,255,0.85)),url("hero.jpg");
+background-size:cover;background-position:center;
+}
+.about-hero h1{font-size:48px;}
+.about-hero p{color:#caa75e;margin-top:10px;font-size:20px;}
+
+/* STORY */
+.story{padding:80px 8%;display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;}
+.story img{width:100%;border-radius:12px;}
+.story h2{margin-bottom:20px;}
+.story p{color:#555;margin-bottom:15px;}
+
+/* VALUES */
+.values{padding:80px 8%;text-align:center;}
+.values h2{font-size:36px;margin-bottom:10px;}
+.values p{color:#666;margin-bottom:50px;}
+.value-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:30px;}
+.value-card{background:white;padding:30px;border-radius:15px;box-shadow:0 10px 20px rgba(0,0,0,0.05);}
+.icon{
+width:60px;height:60px;background:#243a57;color:#caa75e;border-radius:50%;
+display:flex;align-items:center;justify-content:center;margin:0 auto 15px;font-size:24px;
+}
+
+/* ACHIEVEMENTS */
+.achievements{
+background:#243a57;color:white;padding:80px 8%;text-align:center;border-radius:20px;margin:40px 8%;
+}
+.achievements h2{font-size:36px;margin-bottom:10px;}
+.achievements p{color:#d1d5db;margin-bottom:50px;}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:30px;}
+.stat h3{font-size:40px;color:#caa75e;}
+.stat p{color:#ddd;}
+
+/* FOUNDERS */
+.founders{padding:80px 8%;text-align:center;}
+.founders h2{margin-bottom:40px;}
+.founder-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:30px;}
+.founder{background:white;padding:20px;border-radius:12px;box-shadow:0 10px 20px rgba(0,0,0,0.05);}
+.founder img{width:100%;border-radius:10px;margin-bottom:10px;}
+
+/* REVIEWS */
+.reviews{padding:80px 8%;text-align:center;background:#f1f5f9;}
+.review-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:30px;margin-top:40px;}
+.review{background:white;padding:25px;border-radius:12px;box-shadow:0 10px 20px rgba(0,0,0,0.05);}
+.review p{color:#555;margin-bottom:10px;}
+
+/* CONTACT */
+.contact-section{padding:80px 8%;}
+.contact-container{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;}
+.contact-form input,.contact-form textarea{
+width:100%;padding:12px;margin-bottom:15px;border-radius:8px;border:1px solid #ccc;
+}
+.contact-form button{
+background:#243a57;color:white;padding:12px;border:none;border-radius:8px;cursor:pointer;
+}
+.map iframe{border-radius:12px;}
+
+/* CTA */
+.cta{background:#243a57;color:white;text-align:center;padding:80px 20px;}
+.cta h2{font-size:36px;margin-bottom:10px;}
+.cta p{color:#d1d5db;margin-bottom:30px;}
+.btn{padding:12px 30px;border-radius:8px;text-decoration:none;margin:10px;display:inline-block;font-weight:600;}
+.gold{background:#caa75e;color:#1d2b3a;}
+.outline{border:1px solid white;color:white;}
+
+/* WHATSAPP FLOAT */
+.whatsapp-float{
+position:fixed;bottom:20px;right:20px;background:#25D366;color:white;
+padding:15px;border-radius:50%;text-decoration:none;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+.story{grid-template-columns:1fr;}
+.contact-container{grid-template-columns:1fr;}
+.about-hero h1{font-size:32px;}
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="about-hero">
+<h1>About MANZAR</h1>
+<p>Exquisite Craftsmanship & Trust</p>
+</section>
+
+<!-- STORY -->
+<section class="story">
+<div>
+<h2>Our Story</h2>
+<p>Manzar Jewellery & Co. is built on passion, trust, and timeless craftsmanship.</p>
+<p>We specialize in 92.5 silver jewellery and custom gold designs.</p>
+<p>Every piece reflects our commitment to quality and customer satisfaction.</p>
+</div>
+<img src="about.jpg">
+</section>
+
+<!-- VALUES -->
+<section class="values">
+<h2>Our Values</h2>
+<p>The principles that guide everything we do</p>
+<div class="value-grid">
+
+<div class="value-card"><div class="icon">🏅</div><h3>Quality Excellence</h3></div>
+<div class="value-card"><div class="icon">❤️</div><h3>Customer Trust</h3></div>
+<div class="value-card"><div class="icon">👨‍🔧</div><h3>Expert Artisans</h3></div>
+<div class="value-card"><div class="icon">✨</div><h3>Innovation</h3></div>
+
+</div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section class="achievements">
+<h2>Our Achievements</h2>
+<p>Milestones that reflect our commitment</p>
+<div class="stats">
+<div class="stat"><h3>5000+</h3><p>Happy Customers</p></div>
+<div class="stat"><h3>10+</h3><p>Years Experience</p></div>
+<div class="stat"><h3>100%</h3><p>Satisfaction</p></div>
+<div class="stat"><h3>500+</h3><p>Designs</p></div>
+</div>
+</section>
+
+<!-- FOUNDERS -->
+<section class="founders">
+<h2>Our Leadership</h2>
+<div class="founder-grid">
+<div class="founder">
+<img src="owner.jpg">
+<h3>Sheikh Musheer Yathmari</h3>
+<p>Founder</p>
+</div>
+<div class="founder">
+<img src="cofounder.jpg">
+<h3>Sheikh Mujeeb Yathmari</h3>
+<p>Co-Founder</p>
+</div>
+</div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews">
+<h2>What Our Customers Say</h2>
+<div class="review-grid">
+<div class="review"><p>"Amazing quality!"</p><h4>⭐⭐⭐⭐⭐</h4></div>
+<div class="review"><p>"Loved the design!"</p><h4>⭐⭐⭐⭐⭐</h4></div>
+<div class="review"><p>"Highly recommended!"</p><h4>⭐⭐⭐⭐⭐</h4></div>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section">
+<div class="contact-container">
+
+<div class="contact-form">
+<h2>Contact Us</h2>
+
+<form action="https://formsubmit.co/manzarjewellers.co@gmail.com" method="POST">
+<input type="hidden" name="_captcha" value="false">
+
+<input type="text" placeholder="Your Name" required>
+<input type="email" placeholder="Your Email" required>
+<input type="tel" placeholder="Phone Number" required>
+<textarea placeholder="Your Message"></textarea>
+
+<button type="submit">Send Message</button>
+</form>
+
+</div>
+
+<div class="map">
+<iframe src="https://www.google.com/maps?q=Sindhanur,Karnataka&output=embed" width="100%" height="350"></iframe>
+</div>
+
+</div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+<h2>Ready to Find Your Perfect Piece?</h2>
+<p>Contact us for custom jewellery designs</p>
+<a href="#" class="btn gold">Order Custom Jewelry</a>
+<a href="#" class="btn outline">Contact Us</a>
+</section>
+
+<!-- WHATSAPP -->
+<a href="https://wa.me/919148891572?text=Hi I want to know more about your jewellery" class="whatsapp-float">💬</a>
+
+</body>
+</html>
