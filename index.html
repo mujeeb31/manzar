@@ -1,19 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Manzar Jewellery</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
-body{
-font-family:Arial;
+*{
 margin:0;
-background:#f5f5f5;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#f9f9f9;
+color:#1d2b3a;
 }
 
 /* HEADER */
@@ -22,29 +27,39 @@ header{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:20px 40px;
+padding:20px 8%;
 background:white;
+position:sticky;
+top:0;
+z-index:1000;
+box-shadow:0 2px 10px rgba(0,0,0,0.05);
 }
 
 .logo img{
-height:60px;
+height:50px;
 }
 
 nav a{
-margin-left:20px;
+margin-left:25px;
 text-decoration:none;
-color:#333;
-font-weight:bold;
+color:#1d2b3a;
+font-weight:500;
 }
 
 /* HERO */
 
 .hero{
+height:80vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
 text-align:center;
-padding:80px 20px;
-background:url("images/hero.jpg");
+padding:20px;
+background:linear-gradient(rgba(255,255,255,0.85),rgba(255,255,255,0.85)),
+url("hero.jpg");
 background-size:cover;
-color:white;
+background-position:center;
 }
 
 .hero h1{
@@ -52,49 +67,154 @@ font-size:48px;
 margin-bottom:10px;
 }
 
+.tagline{
+color:#caa75e;
+font-size:26px;
+margin-bottom:20px;
+font-weight:600;
+}
+
 .hero p{
-font-size:20px;
+max-width:600px;
+margin-bottom:30px;
+color:#555;
 }
-
-/* PRODUCTS */
-
-.products{
-padding:60px 40px;
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:30px;
-}
-
-.product{
-background:white;
-padding:20px;
-border-radius:10px;
-text-align:center;
-}
-
-.product img{
-width:100%;
-border-radius:8px;
-}
-
-.product h3{
-margin:10px 0;
-}
-
-/* BUTTON */
 
 .btn{
+padding:12px 30px;
+border-radius:8px;
+text-decoration:none;
+font-weight:600;
+margin:10px;
+display:inline-block;
+}
+
+.primary{
 background:#243a57;
 color:white;
+}
+
+.whatsapp{
+border:2px solid #25D366;
+color:#25D366;
+}
+
+/* PRODUCTS PAGE */
+
+.products-page{
+padding:60px 8%;
+}
+
+.search{
+width:100%;
+max-width:600px;
+margin:auto;
+display:block;
+padding:15px;
+border-radius:10px;
+border:1px solid #ddd;
+margin-bottom:30px;
+}
+
+.filters{
+text-align:center;
+margin-bottom:40px;
+}
+
+.filters button{
+margin:5px;
 padding:10px 20px;
-border:none;
-border-radius:5px;
+border-radius:8px;
+border:1px solid #ccc;
+background:white;
 cursor:pointer;
 }
 
-/* WHATSAPP */
+.filters .active{
+background:#243a57;
+color:white;
+}
 
-.whatsapp{
+.products-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:30px;
+}
+
+.product-card{
+background:white;
+padding:15px;
+border-radius:15px;
+box-shadow:0 10px 20px rgba(0,0,0,0.05);
+position:relative;
+}
+
+.product-card img{
+width:100%;
+height:220px;
+object-fit:cover;
+border-radius:12px;
+margin-bottom:10px;
+}
+
+.product-card h3{
+margin-bottom:8px;
+}
+
+.product-card p{
+color:#555;
+font-size:14px;
+margin-bottom:10px;
+}
+
+.price{
+font-weight:600;
+margin-bottom:15px;
+}
+
+.price span{
+background:#eee;
+padding:5px 10px;
+border-radius:10px;
+font-size:12px;
+margin-left:10px;
+}
+
+.stock{
+position:absolute;
+top:15px;
+right:15px;
+background:#22c55e;
+color:white;
+padding:5px 10px;
+border-radius:20px;
+font-size:12px;
+}
+
+.whatsapp-btn{
+display:block;
+background:#22c55e;
+color:white;
+text-align:center;
+padding:12px;
+border-radius:8px;
+text-decoration:none;
+font-weight:500;
+}
+
+/* FOOTER */
+
+footer{
+background:#243a57;
+color:white;
+text-align:center;
+padding:30px;
+margin-top:60px;
+}
+
+/* FLOAT BUTTON */
+
+.whatsapp-float{
 position:fixed;
 bottom:20px;
 right:20px;
@@ -102,91 +222,118 @@ background:#25D366;
 color:white;
 padding:15px;
 border-radius:50%;
-font-size:22px;
 text-decoration:none;
 }
 
-</style>
+/* MOBILE */
 
+@media(max-width:768px){
+.hero h1{
+font-size:36px;
+}
+}
+
+</style>
 </head>
 
 <body>
 
 <header>
-
 <div class="logo">
-
-<img src="images/logo.png" alt="Manzar Logo">
-
+<img src="logo.png">
 </div>
 
 <nav>
-
 <a href="#">Home</a>
-<a href="#">Collection</a>
+<a href="#">Products</a>
+<a href="#">About</a>
 <a href="#">Contact</a>
-
 </nav>
-
 </header>
 
+<!-- HERO -->
 
 <section class="hero">
-
 <h1>MANZAR Jewellery</h1>
 
-<p>Exquisite Craftsmanship & Trust</p>
-
-</section>
-
-
-<section class="products">
-
-<div class="product">
-
-<img src="images/ring.jpg">
-
-<h3>Silver Ring</h3>
-
-<p>₹2999</p>
-
-<button class="btn">Add to Cart</button>
-
+<div class="tagline">
+Exquisite Craftsmanship & Trust
 </div>
 
+<p>
+Discover exquisite 92.5 silver jewelry and custom gold designs crafted with passion and precision
+</p>
 
-<div class="product">
+<a href="#products" class="btn primary">Explore Collection</a>
 
-<img src="images/necklace.jpg">
-
-<h3>Gold Necklace</h3>
-
-<p>₹5999</p>
-
-<button class="btn">Add to Cart</button>
-
-</div>
-
-
-<div class="product">
-
-<img src="images/earrings.jpg">
-
-<h3>Diamond Earrings</h3>
-
-<p>₹3999</p>
-
-<button class="btn">Add to Cart</button>
-
-</div>
-
-</section>
-
-
-<a class="whatsApp" href="https://wa.me/919148891572">
-💬
+<a href="https://wa.me/919148891572" class="btn whatsapp">
+Chat on WhatsApp
 </a>
+</section>
+
+<!-- PRODUCTS -->
+
+<section class="products-page" id="products">
+
+<input type="text" placeholder="Search jewelry..." class="search">
+
+<div class="filters">
+<button class="active">All Products</button>
+<button>Rings</button>
+<button>Necklaces</button>
+<button>Bracelets</button>
+</div>
+
+<div class="products-grid">
+
+<div class="product-card">
+<span class="stock">In Stock</span>
+<img src="ring1.jpg">
+<h3>Elegant Silver Ring</h3>
+<p>92.5 pure silver ring with intricate design</p>
+<div class="price">₹2,500 <span>92.5 Silver</span></div>
+
+<a href="https://wa.me/919148891572?text=Hi I want Elegant Silver Ring"
+class="whatsapp-btn">
+Inquire on WhatsApp
+</a>
+</div>
+
+<div class="product-card">
+<span class="stock">In Stock</span>
+<img src="ring2.jpg">
+<h3>Classic Wedding Rings</h3>
+<p>Perfect pair of silver rings</p>
+<div class="price">₹4,500 <span>92.5 Silver</span></div>
+
+<a href="https://wa.me/919148891572?text=Hi I want Classic Wedding Rings"
+class="whatsapp-btn">
+Inquire on WhatsApp
+</a>
+</div>
+
+<div class="product-card">
+<span class="stock">In Stock</span>
+<img src="ring3.jpg">
+<h3>Diamond Silver Ring</h3>
+<p>Elegant diamond setting</p>
+<div class="price">₹3,200 <span>92.5 Silver</span></div>
+
+<a href="https://wa.me/919148891572?text=Hi I want Diamond Silver Ring"
+class="whatsapp-btn">
+Inquire on WhatsApp
+</a>
+</div>
+
+</div>
+
+</section>
+
+<footer>
+<p>© 2026 Manzar Jewellery & Co.</p>
+</footer>
+
+<a class="whatsapp-float" href="https://wa.me/919148891572">💬</a>
 
 </body>
-
 </html>
