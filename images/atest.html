@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manzar Jewellery</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* ===== GLOBAL ===== */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#f8f6f2;
+color:#1d2b3a;
+}
+
+/* COLORS */
+:root{
+--navy:#1d2b3a;
+--gold:#caa75e;
+--ivory:#f8f6f2;
+}
+
+/* ===== CURSOR ===== */
+.cursor{
+width:20px;
+height:20px;
+border:2px solid var(--gold);
+border-radius:50%;
+position:fixed;
+pointer-events:none;
+transform:translate(-50%,-50%);
+z-index:9999;
+}
+
+/* ===== HEADER ===== */
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 8%;
+background:white;
+position:sticky;
+top:0;
+z-index:1000;
+box-shadow:0 4px 20px rgba(0,0,0,0.05);
+}
+
+.logo img{
+height:50px;
+}
+
+nav a{
+margin:0 15px;
+text-decoration:none;
+color:var(--navy);
+font-weight:500;
+position:relative;
+}
+
+nav a::after{
+content:"";
+position:absolute;
+height:2px;
+width:0;
+background:var(--gold);
+left:0;
+bottom:-5px;
+transition:0.3s;
+}
+
+nav a:hover::after{
+width:100%;
+}
+
+.call-btn{
+background:var(--navy);
+color:white;
+padding:10px 20px;
+border-radius:8px;
+text-decoration:none;
+}
+
+/* ===== HERO ===== */
+.hero{
+height:90vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+
+background:linear-gradient(rgba(248,246,242,0.9),rgba(248,246,242,0.9)),
+url("images/hero.jpg");
+
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+}
+
+.hero h1{
+font-size:60px;
+letter-spacing:2px;
+}
+
+.gold-text{
+background:linear-gradient(45deg,#caa75e,#f5d27a);
+-webkit-background-clip:text;
+color:transparent;
+}
+
+.hero p{
+margin:20px 0;
+max-width:600px;
+color:#555;
+}
+
+.btn{
+padding:14px 30px;
+border-radius:8px;
+text-decoration:none;
+font-weight:600;
+margin:10px;
+display:inline-block;
+transition:0.3s;
+}
+
+.btn:hover{
+transform:translateY(-3px);
+box-shadow:0 10px 25px rgba(202,167,94,0.3);
+}
+
+.primary{
+background:var(--navy);
+color:white;
+}
+
+.whatsapp{
+border:2px solid #25D366;
+color:#25D366;
+}
+
+/* ===== ANIMATION ===== */
+.fade-up{
+opacity:0;
+transform:translateY(40px);
+transition:all 1s ease;
+}
+
+.fade-up.show{
+opacity:1;
+transform:translateY(0);
+}
+
+/* ===== PRODUCTS ===== */
+.products{
+padding:80px 8%;
+text-align:center;
+}
+
+.products h2{
+font-size:36px;
+margin-bottom:40px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+}
+
+.card{
+background:rgba(255,255,255,0.6);
+backdrop-filter:blur(10px);
+border-radius:12px;
+overflow:hidden;
+box-shadow:0 10px 25px rgba(0,0,0,0.05);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+}
+
+.card img{
+width:100%;
+height:250px;
+object-fit:cover;
+transition:0.5s;
+}
+
+.card:hover img{
+transform:scale(1.1);
+}
+
+.card-content{
+padding:20px;
+}
+
+.price{
+color:var(--gold);
+font-weight:600;
+margin:10px 0;
+}
+
+/* ===== FEATURES ===== */
+.features{
+padding:80px 8%;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+text-align:center;
+}
+
+.feature{
+background:rgba(255,255,255,0.6);
+backdrop-filter:blur(10px);
+padding:30px;
+border-radius:12px;
+box-shadow:0 5px 20px rgba(0,0,0,0.05);
+}
+
+/* ===== CTA ===== */
+.cta{
+background:var(--navy);
+color:white;
+text-align:center;
+padding:80px 20px;
+}
+
+.cta p{
+color:#ddd;
+margin:20px 0;
+}
+
+/* ===== FOOTER ===== */
+footer{
+background:var(--navy);
+color:white;
+padding:50px 8%;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+}
+
+footer a{
+color:#ccc;
+text-decoration:none;
+}
+
+/* ===== WHATSAPP FLOAT ===== */
+.whatsapp-float{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:15px;
+border-radius:50%;
+font-size:22px;
+text-decoration:none;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+.hero h1{
+font-size:40px;
+}
+nav{
+display:none;
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="cursor"></div>
+
+<!-- HEADER -->
+<header>
+<div class="logo">
+<img src="images/logo.png">
+</div>
+
+<nav>
+<a href="#">Home</a>
+<a href="#products">Products</a>
+<a href="#">About</a>
+<a href="#">Contact</a>
+</nav>
+
+<a href="tel:9113547199" class="call-btn">Call Us</a>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+
+<h1 class="gold-text">MANZAR Jewellery</h1>
+
+<p>Exquisite 92.5 silver & custom gold jewellery crafted with elegance and trust</p>
+
+<a href="#products" class="btn primary">Explore Collection</a>
+<a href="https://wa.me/919148891572" class="btn whatsapp">Chat on WhatsApp</a>
+
+</section>
+
+<!-- PRODUCTS -->
+<section class="products fade-up" id="products">
+
+<h2>Our Collection</h2>
+
+<div class="grid">
+
+<div class="card fade-up">
+<img src="images/ring.jpg">
+<div class="card-content">
+<h3>Silver Ring</h3>
+<p class="price">₹2,500</p>
+<a href="https://wa.me/919148891572" class="btn primary">Inquire</a>
+</div>
+</div>
+
+<div class="card fade-up">
+<img src="images/necklace.jpg">
+<div class="card-content">
+<h3>Gold Necklace</h3>
+<p class="price">₹8,500</p>
+<a href="https://wa.me/919148891572" class="btn primary">Inquire</a>
+</div>
+</div>
+
+<div class="card fade-up">
+<img src="images/earrings.jpg">
+<div class="card-content">
+<h3>Earrings</h3>
+<p class="price">₹1,800</p>
+<a href="https://wa.me/919148891572" class="btn primary">Inquire</a>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<!-- FEATURES -->
+<section class="features fade-up">
+
+<div class="feature">
+<h3>Premium Quality</h3>
+<p>Crafted with finest materials</p>
+</div>
+
+<div class="feature">
+<h3>Trusted Brand</h3>
+<p>100% customer satisfaction</p>
+</div>
+
+<div class="feature">
+<h3>Custom Designs</h3>
+<p>Personalized jewellery made for you</p>
+</div>
+
+</section>
+
+<!-- CTA -->
+<section class="cta fade-up">
+
+<h2>Ready to Find Your Perfect Piece?</h2>
+
+<p>Contact us for exclusive designs</p>
+
+<a href="https://wa.me/919148891572" class="btn whatsapp">Order on WhatsApp</a>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+
+<div>
+<h3>Manzar Jewellery</h3>
+<p>Exquisite Craftsmanship & Trust</p>
+</div>
+
+<div>
+<h3>Quick Links</h3>
+<p><a href="#">Home</a></p>
+<p><a href="#">Products</a></p>
+<p><a href="#">About</a></p>
+</div>
+
+<div>
+<h3>Contact</h3>
+<p>9113547199</p>
+<p>9148891572</p>
+<p>manzarjewellers.co@gmail.com</p>
+</div>
+
+</footer>
+
+<a href="https://wa.me/919148891572" class="whatsapp-float">💬</a>
+
+<!-- JS -->
+<script>
+
+/* CURSOR */
+const cursor = document.querySelector(".cursor");
+document.addEventListener("mousemove", e=>{
+cursor.style.top = e.clientY + "px";
+cursor.style.left = e.clientX + "px";
+});
+
+/* SCROLL ANIMATION */
+const elements = document.querySelectorAll(".fade-up");
+
+window.addEventListener("scroll", ()=>{
+elements.forEach(el=>{
+const top = el.getBoundingClientRect().top;
+if(top < window.innerHeight - 100){
+el.classList.add("show");
+}
+});
+});
+
+</script>
+
+</body>
+</html>
