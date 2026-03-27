@@ -188,7 +188,97 @@ transition:all 0.8s ease;
 opacity:1;
 transform:translateY(0);
 }
+/* FOUNDERS (ABOUT PAGE STYLE MATCH) */
 
+.founders{
+text-align:center;
+}
+
+/* GRID */
+
+.founder-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:40px;
+margin-top:50px;
+}
+
+/* CARD */
+
+.founder-card{
+position:relative;
+border-radius:15px;
+overflow:hidden;
+cursor:pointer;
+background:rgba(255,255,255,0.03);
+backdrop-filter:blur(10px);
+transition:0.4s;
+}
+
+/* IMAGE */
+
+.founder-card img{
+width:100%;
+height:360px;
+object-fit:cover;
+transition:0.5s;
+}
+
+/* OVERLAY */
+
+.overlay{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:linear-gradient(to top, rgba(0,0,0,0.85), transparent);
+opacity:0.7;
+transition:0.4s;
+}
+
+/* INFO */
+
+.founder-info{
+position:absolute;
+bottom:20px;
+left:20px;
+color:white;
+text-align:left;
+}
+
+.founder-info h3{
+font-size:20px;
+margin-bottom:5px;
+}
+
+.founder-info p{
+color:#caa75e;
+font-size:14px;
+}
+
+/* HOVER EFFECT */
+
+.founder-card:hover{
+transform:translateY(-10px);
+box-shadow:0 20px 40px rgba(202,167,94,0.2);
+}
+
+.founder-card:hover img{
+transform:scale(1.08);
+}
+
+.founder-card:hover .overlay{
+opacity:1;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+.founder-card img{
+height:280px;
+}
+}
 /* MOBILE */
 
 @media(max-width:768px){
@@ -312,21 +402,39 @@ From premium 92.5 silver to custom gold jewellery, we create pieces that define 
 
 </section>
   
-  <!-- FOUNDERS -->
-<section class="founders">
-<h2>Our Leadership</h2>
+ <!-- FOUNDERS -->
+<section class="section founders">
+
+<h2 class="hidden">Our Leadership</h2>
+
 <div class="founder-grid">
-<div class="founder">
-<img src="images/owner.jpg">
+
+<!-- FOUNDER 1 -->
+<div class="founder-card hidden">
+<img src="images/owner.jpg" alt="Founder">
+
+<div class="overlay"></div>
+
+<div class="founder-info">
 <h3>Sheikh Musheer Yathmari</h3>
 <p>Founder</p>
 </div>
-<div class="founder">
-<img src="images/founder.jpg">
+</div>
+
+<!-- FOUNDER 2 -->
+<div class="founder-card hidden">
+<img src="images/founder.jpg" alt="Co-Founder">
+
+<div class="overlay"></div>
+
+<div class="founder-info">
 <h3>Sheikh Mujeeb Yathmari</h3>
 <p>Co-Founder</p>
 </div>
 </div>
+
+</div>
+
 </section>
 
 <!-- SCRIPTS -->
